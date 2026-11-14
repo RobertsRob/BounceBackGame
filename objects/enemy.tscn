@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bbhkbd64eb662"]
+
+[ext_resource type="Script" uid="uid://t8r06s5yv73h" path="res://objects/enemy.gd" id="1_7jlpp"]
+[ext_resource type="Texture2D" uid="uid://d2r1xjqel2wfp" path="res://resources/enemy.png" id="1_882u1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dliiv"]
+radius = 64.00781
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2gpic"]
+radius = 20.0
+
+[node name="enemy" type="CharacterBody2D" unique_id=1491766188]
+collision_layer = 4
+script = ExtResource("1_7jlpp")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1621257270]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=472153448]
+shape = SubResource("CircleShape2D_dliiv")
+debug_color = Color(0.7438209, 0.4171317, 0.5471198, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=491318702]
+scale = Vector2(2.7033978, 2.7033978)
+shape = SubResource("CircleShape2D_2gpic")
+
+[node name="Enemy" type="Sprite2D" parent="." unique_id=852224533]
+texture_filter = 1
+position = Vector2(0, -2.3841858e-07)
+scale = Vector2(10.137741, 10.137741)
+texture = ExtResource("1_882u1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

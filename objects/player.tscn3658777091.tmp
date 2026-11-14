@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://7ti60m3yxayd"]
+
+[ext_resource type="Texture2D" uid="uid://dljf70mdinu08" path="res://resources/icon.svg" id="1_eqqp1"]
+[ext_resource type="Script" uid="uid://csyt78bt0ik6j" path="res://objects/player.gd" id="1_ykyjo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dliiv"]
+radius = 63.07139
+
+[node name="player" type="CharacterBody2D" unique_id=1121133013]
+collision_layer = 2
+script = ExtResource("1_ykyjo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=509344566]
+texture = ExtResource("1_eqqp1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1460032349]
+shape = SubResource("CircleShape2D_dliiv")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1950286309]
+limit_bottom = 800
+limit_smoothed = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1059164663]
+wait_time = 0.6
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

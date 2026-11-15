@@ -186,9 +186,5 @@ position = Vector2(1249, 321)
 position = Vector2(613, 882)
 collision_mask = 2
 
-[node name="bullet" parent="." unique_id=585036290 instance=ExtResource("6_rt2n2")]
-visible = false
-position = Vector2(155, 177)
-
 [node name="enemySpawner" parent="." unique_id=1223793346 instance=ExtResource("7_c16ls")]
 enemyPacked = ExtResource("5_gubc5")
